@@ -1,15 +1,24 @@
-﻿
+'Made by Terry 
+'Date:9/20/2017
+'Framework: Visual Basic.Net 
+'Verson: 1.0
+
 Public Class Form3
+    'The Images of cake man that go right, lift, up, down. 
     Dim img() As Image = {My.Resources.smallpac1, My.Resources.smallpacrd2, My.Resources.smallpacD}
     Dim imgu() As Image = {My.Resources.smallpac1, My.Resources.smallpacru2, My.Resources.smallpacU}
     Dim imgr() As Image = {My.Resources.smallpac1, My.Resources.smallpacr1, My.Resources.smallpacR}
     Dim imgl() As Image = {My.Resources.smallpac1, My.Resources.smallpacrl2, My.Resources.smallpacL}
+    'A random number object to help with the random telepotion of the form and the randomist of the black hole
     Dim ran As New Random()
+    'Form X and Y coordinates for random teleportion in Arreys
     Dim x() As Integer = {448, 826, 16, 16, 182, 385, 385, 385, 385, 385}
     Dim y() As Integer = {288, 348, 566, 15, 15, 249, 249, 249, 249, 249}
-
+    'Picturebox arrey to hold my pics of the cake image
     Dim picCake(10) As PictureBox
+    'Game points to keep trak of all cake eatin by cake man
     Dim point As Integer
+    'controls 
     Dim rite As Boolean
     Dim lift As Boolean
     Dim up As Boolean
@@ -18,8 +27,9 @@ Public Class Form3
     Dim u As Integer = 0
     Dim l As Integer = 0
     Dim r As Integer = 0
+    
 
-
+    ' function to take a key press down to turn boolean virables true to make movement in the timer funcion RMTMove_Tick
     Private Sub Form3_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Right Then
             rite = True
@@ -37,7 +47,7 @@ Public Class Form3
         End If
 
     End Sub
-
+' function to take a key press up to turn boolean virables false to stop movement in the timer function RMTMove_Tick
     Private Sub Form3_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         If e.KeyCode = Keys.Right Then
             rite = False
