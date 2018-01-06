@@ -64,7 +64,7 @@ Public Class Form3
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+'loading pictures in to the array
         picCake(0) = Me.PictureBox2
         picCake(1) = Me.PictureBox7
         picCake(2) = Me.PictureBox8
@@ -80,7 +80,7 @@ Public Class Form3
     End Sub
 
     Private Sub RMTMove_Tick(sender As Object, e As EventArgs) Handles RMTMove.Tick
-
+' moves the image of cake man 3 pixals 
         If rite = True Then
             PictureBox1.Left += 3
         End If
@@ -96,6 +96,7 @@ Public Class Form3
 
     End Sub
 
+' this is the collion dector for the cakes and the border of the game also has a point keeper to end the game. 
     Private Sub collionT_Tick(sender As Object, e As EventArgs) Handles collionT.Tick
         Randomize()
         Dim rx As Integer = ran.Next(0, 10)
@@ -142,7 +143,7 @@ Public Class Form3
 
 
     End Sub
-
+' this animates the cake man. 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If rite = True Then
             r += 1
@@ -177,6 +178,7 @@ Public Class Form3
             End If
         End If
     End Sub
+'the sub that turn off all the timers for end of game play. 
     Public Sub Points(ByVal a As Integer)
 
         If a = 110 Then
@@ -191,7 +193,8 @@ Public Class Form3
             End If
         End If
     End Sub
-
+' this is the black hole that moves around in random on the screen when cake man hits it he is transported to another part of 
+' the form. 
     Private Sub blackmove_Tick(sender As Object, e As EventArgs) Handles blackmove.Tick
         Randomize()
         Dim n As Integer = ran.Next(0, 5)
@@ -225,7 +228,7 @@ Public Class Form3
         End Select
 
     End Sub
-
+'this makes the black hole disapere on the screen in random. 
     Private Sub blackoff_Tick(sender As Object, e As EventArgs) Handles blackoff.Tick
         Randomize()
         Dim w As Integer = ran.Next(0, 5)
